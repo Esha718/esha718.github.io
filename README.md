@@ -9,7 +9,7 @@ If you open `index.html` straight from inside the zip, the styles won't load.
 - `index.html`: all the page content
 - `style.css`: the "Navy, Gold & Rose" theme, layout, animations and phone/tablet/laptop layouts
 - `script.js`: loader, typing effect, scroll reveals, card tilt, timeline fill, particles and contact form
-- `assets/Esha_Javed_CV.pdf`: the file behind the "Download CV" button
+- `assets/Esha_Javed_Resume_2026.pdf`: the file behind the "Download CV" button
 
 ## Easy upgrades
 - **Add a photo:** replace the "EJ" circle in the hero (`.mono__core` in `index.html`) with an `<img>`.
