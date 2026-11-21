@@ -429,6 +429,16 @@ a.c-card:hover .c-card__go { transform: translate(4px, -4px); color: var(--gold-
 .to-top svg { width: 20px; height: 20px; }
 .to-top:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); transform: translateY(-4px); }
 
+/* LinkedIn */
+.nav__social { display: grid; place-items: center; width: 46px; height: 46px; margin-left: auto; margin-right: -12px; border-radius: 50%; color: var(--navy); border: 1px solid var(--line-2); background: rgba(255, 255, 255, .7); transition: all .35s var(--ease); }
+.nav__social svg { width: 21px; height: 21px; }
+.nav__social:hover, .btn--linkedin:hover { color: #fff; background: #0a66c2; border-color: #0a66c2; box-shadow: 0 12px 26px -12px rgba(10, 102, 194, .8); }
+.btn--linkedin { width: var(--h); padding: 0; }
+.btn--linkedin svg { width: 22px; height: 22px; stroke-width: 1.9; }
+.btn--linkedin span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.c-card__ico--blue { color: #0a66c2; background: rgba(10, 102, 194, .1); border-color: rgba(10, 102, 194, .25); }
+a.c-card--linkedin:hover .c-card__go { color: #0a66c2; }
+
 /* Reveal */
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
 .reveal.in { opacity: 1; transform: none; }
