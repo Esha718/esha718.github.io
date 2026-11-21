@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esha Javed | Computer Science Graduate · Web, SEO &amp; Content</title>
+  <meta name="description" content="Esha Javed, BS Computer Science graduate from The Islamia University of Bahawalpur (2026). Front-end web development, WordPress, SEO, content writing, social media marketing and computer teaching." />
+  <meta name="theme-color" content="#14213d" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Esha Javed · Computer Science Graduate" />
+  <meta property="og:description" content="Front-end web development, WordPress, SEO, content writing and social media marketing, plus two years of computer teaching." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%2314213d'/%3E%3Ctext x='32' y='42' font-family='Georgia' font-style='italic' font-weight='700' font-size='26' text-anchor='middle' fill='%23d4a537'%3EEJ%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=1" />
+</head>
+<body>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__ring"><span>EJ</span></div>
+  </div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div class="bg" aria-hidden="true">
+    <div class="bg__blob bg__blob--1"></div>
+    <div class="bg__blob bg__blob--2"></div>
+    <div class="bg__blob bg__blob--3"></div>
+    <div class="bg__dots"></div>
+    <canvas id="particles"></canvas>
+  </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="logo" aria-label="Esha Javed, home">
+        <span class="logo__mark">EJ</span>
+        <span class="logo__text">Esha <b>Javed</b></span>
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav__cta-mobile"><a href="#contact" class="btn btn--primary">Hire Me</a></li>
+      </ul>
+      <a href="#contact" class="btn btn--primary nav__cta"><span>Hire Me</span>
+        <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero container" id="home">
+      <div class="hero__content">
+        <div class="pill reveal"><span class="pill__dot"></span>Open to opportunities · Graduated 2026</div>
+        <h1 class="hero__title reveal" data-delay="1">
+          <span class="hero__hi">Hello, I'm</span>
+          <span class="hero__name">Esha <em>Javed</em></span>
+        </h1>
+        <p class="hero__role reveal" data-delay="2">
+          <span class="typed" id="typed"></span><span class="caret">|</span>
+        </p>
+        <p class="hero__lead reveal" data-delay="3">
+          A <strong>Computer Science graduate</strong> from The Islamia University of Bahawalpur who builds
+          <strong>responsive websites</strong>, writes <strong>SEO-friendly content</strong> and grows brands on
+          <strong>social media</strong>, backed by two years of teaching experience.
+        </p>
+        <div class="hero__actions reveal" data-delay="4">
+          <a href="#contact" class="btn btn--primary btn--lg magnetic"><span>Let's Work Together</span>
+            <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="assets/Esha_Javed_CV.pdf" class="btn btn--ghost btn--lg magnetic" download>
+            <svg viewBox="0 0 24 24" class="ico-dl"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg><span>Download CV</span></a>
+        </div>
+        <ul class="hero__stats reveal" data-delay="5">
+          <li><b><span class="counter" data-to="2">0</span>+</b><span>Years teaching<br/>experience</span></li>
+          <li><b><span class="counter" data-to="7">0</span></b><span>Certifications<br/>&amp; courses</span></li>
+          <li><b><span class="counter" data-to="4">0</span></b><span>Areas of<br/>expertise</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__visual reveal" data-delay="2">
+        <div class="stage" id="portrait">
+          <div class="stage__glow"></div>
+
+          <!-- Browser mock-up building a page -->
+          <div class="browser">
+            <div class="browser__bar">
+              <span class="d"></span><span class="d"></span><span class="d"></span>
+              <span class="browser__url">eshajaved.dev</span>
+            </div>
+            <div class="browser__body">
+              <div class="sk sk--nav"><i></i><i></i><i></i><i></i></div>
+              <div class="sk sk--hero"><b></b><b class="short"></b><span class="sk__btn"></span></div>
+              <div class="sk sk--cards"><i></i><i></i><i></i></div>
+              <div class="sk sk--lines"><b></b><b></b><b class="short"></b></div>
+            </div>
+          </div>
+
+          <!-- Monogram badge with rotating text -->
+          <div class="mono">
+            <svg class="mono__text" viewBox="0 0 200 200" aria-hidden="true">
+              <defs><path id="monoCircle" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+              <text><textPath href="#monoCircle" textLength="496" lengthAdjust="spacing">COMPUTER SCIENCE · WEB · SEO · CONTENT ·</textPath></text>
+            </svg>
+            <div class="mono__core"><span>EJ</span></div>
+          </div>
+
+          <div class="chip chip--1">
+            <span class="chip__ico"><svg viewBox="0 0 24 24" class="bob"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+            <div><b>BS Computer Science</b><small>IUB · 2026</small></div>
+          </div>
+          <div class="chip chip--2">
+            <span class="chip__ico chip__ico--rose"><svg viewBox="0 0 24 24" class="pulse"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <div><b>SEO &amp; Content</b><small>Writing that ranks</small></div>
+          </div>
+          <div class="chip chip--3">
+            <span class="chip__ico chip__ico--gold"><svg viewBox="0 0 24 24" class="spin-slow"><path d="M8 6l-6 6 6 6M16 6l6 6-6 6"/></svg></span>
+            <div><b>Web &amp; WordPress</b><small>HTML · CSS · JS</small></div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span class="scroll-hint__mouse"><i></i></span><small>Scroll</small></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Web Development</span><i>✦</i><span>WordPress</span><i>✦</i><span>SEO</span><i>✦</i><span>Content Writing</span><i>✦</i><span>Social Media Marketing</span><i>✦</i><span>HTML · CSS · JavaScript</span><i>✦</i><span>Computer Teaching</span><i>✦</i>
+        <span>Web Development</span><i>✦</i><span>WordPress</span><i>✦</i><span>SEO</span><i>✦</i><span>Content Writing</span><i>✦</i><span>Social Media Marketing</span><i>✦</i><span>HTML · CSS · JavaScript</span><i>✦</i><span>Computer Teaching</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section container" id="about">
+      <div class="section__head reveal">
+        <span class="eyebrow">About me</span>
+        <h2 class="section__title">Technology, words and teaching, <em>in one person</em></h2>
+      </div>
+      <div class="about">
+        <div class="about__text reveal">
+          <p>
+            I'm <strong>Esha Javed</strong>, a <strong>BS Computer Science</strong> graduate (2026) from
+            <strong>The Islamia University of Bahawalpur</strong>. I enjoy turning ideas into clean, responsive
+            web pages, and helping people find them through good content and SEO.
+          </p>
+          <p>
+            Alongside my studies I spent <strong>two years as a Teaching Assistant and School Teacher</strong>,
+            teaching computer skills, English and general subjects. That taught me to explain technical things
+            simply, stay organised and work patiently with people, which I now bring to every team and project.
+          </p>
+          <p>
+            I've completed training in <strong>front-end development, AI basics, social media marketing,
+            freelancing</strong> and a <strong>content writing internship</strong>, and I'm ready to grow
+            in a web, digital-marketing or IT-education role.
+          </p>
+          <div class="about__tags">
+            <span>Fast Learner</span><span>Clear Communicator</span><span>Creative</span><span>Organised</span><span>Team Player</span>
+          </div>
+        </div>
+        <div class="about__cards">
+          <div class="info-card reveal tilt" data-delay="1">
+            <span class="info-card__ico"><svg viewBox="0 0 24 24" class="bob"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <small>Based in</small><b>Zahir Pir, Rahim Yar Khan</b>
+          </div>
+          <div class="info-card reveal tilt" data-delay="2">
+            <span class="info-card__ico info-card__ico--rose"><svg viewBox="0 0 24 24" class="ring"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+            <small>Phone</small><b><a href="tel:+923167556718">0316 7556718</a></b>
+          </div>
+          <div class="info-card info-card--wide reveal tilt" data-delay="3">
+            <span class="info-card__ico info-card__ico--gold"><svg viewBox="0 0 24 24" class="swing"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></span>
+            <small>Email</small><b><a href="mailto:eshajaved718@gmail.com">eshajaved718@gmail.com</a></b>
+          </div>
+          <div class="info-card info-card--wide reveal tilt" data-delay="4">
+            <span class="info-card__ico"><svg viewBox="0 0 24 24" class="bob"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+            <small>Education</small><b>BS Computer Science · The Islamia University of Bahawalpur · 2026</b>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section container" id="services">
+      <div class="section__head reveal">
+        <span class="eyebrow">What I offer</span>
+        <h2 class="section__title">How I can <em>help your team</em></h2>
+        <p class="section__sub">From building a page to bringing people to it, and teaching others how it all works.</p>
+      </div>
+      <div class="services">
+        <article class="svc reveal tilt" data-delay="1">
+          <span class="svc__num">01</span>
+          <div class="svc__ico"><svg viewBox="0 0 48 48" class="draw"><rect x="5" y="8" width="38" height="28" rx="3"/><path d="M5 16h38M18 42h12M24 36v6"/><path d="M15 24l-4 3 4 3M33 24l4 3-4 3M27 22l-6 10"/></svg></div>
+          <h3>Responsive Web Pages</h3>
+          <p>Clean, mobile-friendly pages built with HTML, CSS and JavaScript that look right on every screen.</p>
+          <ul><li>HTML5 &amp; CSS3 layouts</li><li>JavaScript interactions</li><li>Mobile-first design</li></ul>
+        </article>
+        <article class="svc reveal tilt" data-delay="2">
+          <span class="svc__num">02</span>
+          <div class="svc__ico svc__ico--gold"><svg viewBox="0 0 48 48" class="draw"><circle cx="24" cy="24" r="18"/><path d="M8 18l9 22M17 12l10 28 6-18M30 12c4 0 6 3 6 6 0 4-3 7-3 7"/></svg></div>
+          <h3>WordPress Websites</h3>
+          <p>Setting up and customising WordPress sites: themes, pages, plugins and easy-to-edit content.</p>
+          <ul><li>Theme setup</li><li>Page building</li><li>Plugins &amp; basic upkeep</li></ul>
+        </article>
+        <article class="svc reveal tilt" data-delay="3">
+          <span class="svc__num">03</span>
+          <div class="svc__ico svc__ico--rose"><svg viewBox="0 0 48 48" class="draw"><circle cx="21" cy="21" r="13"/><path d="M31 31l11 11M15 23l4-5 4 4 5-7"/></svg></div>
+          <h3>SEO</h3>
+          <p>On-page SEO that helps people find your website: keywords, headings, meta tags and readable structure.</p>
+          <ul><li>Keyword research</li><li>On-page optimisation</li><li>Search-friendly structure</li></ul>
+        </article>
+        <article class="svc reveal tilt" data-delay="1">
+          <span class="svc__num">04</span>
+          <div class="svc__ico"><svg viewBox="0 0 48 48" class="draw"><path d="M32 6l10 10L18 40H8V30z"/><path d="M27 11l10 10M8 44h32"/></svg></div>
+          <h3>Content Writing</h3>
+          <p>Blogs, web copy and articles that are clear, engaging and written with search in mind.</p>
+          <ul><li>Blog posts &amp; articles</li><li>Website copy</li><li>SEO-friendly writing</li></ul>
+        </article>
+        <article class="svc reveal tilt" data-delay="2">
+          <span class="svc__num">05</span>
+          <div class="svc__ico svc__ico--gold"><svg viewBox="0 0 48 48" class="draw"><path d="M6 20v8l26 10V10z"/><path d="M32 18a6 6 0 0 1 0 12M12 28l3 12h6l-3-11"/></svg></div>
+          <h3>Social Media Marketing</h3>
+          <p>Planning posts and campaigns that grow a brand's audience and keep followers engaged.</p>
+          <ul><li>Content calendars</li><li>Post &amp; caption writing</li><li>Digital marketing basics</li></ul>
+        </article>
+        <article class="svc reveal tilt" data-delay="3">
+          <span class="svc__num">06</span>
+          <div class="svc__ico svc__ico--rose"><svg viewBox="0 0 48 48" class="draw"><rect x="6" y="8" width="36" height="24" rx="2"/><path d="M14 40l10-8 10 8M14 16h12M14 22h20"/></svg></div>
+          <h3>Computer &amp; IT Teaching</h3>
+          <p>Teaching MS Office, typing, internet research and basic computing in a patient, practical way.</p>
+          <ul><li>Lesson planning</li><li>Hands-on IT skills</li><li>Student guidance</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECT ============ -->
+    <section class="section container" id="project">
+      <div class="section__head reveal">
+        <span class="eyebrow">Featured project</span>
+        <h2 class="section__title">E-Commerce <em>Management System</em></h2>
+        <p class="section__sub">A web platform for online buying and selling, planned, designed and documented end to end as a BS Computer Science group project.</p>
+      </div>
+
+      <div class="case">
+        <div class="case__intro reveal">
+          <div class="case__meta">
+            <span><b>Type</b>BSCS group project</span>
+            <span><b>Team</b>Esha Javed &amp; Aiman Jamshed</span>
+            <span><b>Supervisor</b>Muhammad Asif</span>
+            <span><b>Stack</b>PHP · MySQL · HTML · CSS · JS</span>
+          </div>
+          <p>
+            Customers can browse and search products, manage a cart, place orders, pay and track deliveries,
+            while administrators manage products, users, stock, orders and reports. We wrote the full
+            <strong>Software Requirements Specification (SRS)</strong> and <strong>Software Design Description (SDD)</strong>:
+            requirements, architecture, interfaces, database design and security.
+          </p>
+          <div class="case__mods">
+            <span>Registration &amp; Login</span><span>Product Management</span><span>Search &amp; Filters</span><span>Shopping Cart</span>
+            <span>Order Processing</span><span>Payments</span><span>Order Tracking</span><span>Sales Reports</span>
+          </div>
+        </div>
+
+        <div class="case__grid">
+          <!-- Architecture -->
+          <div class="panel reveal tilt" data-delay="1">
+            <h3><span class="panel__ico">⌂</span>Three-tier architecture</h3>
+            <div class="arch">
+              <div class="arch__layer"><b>Presentation</b><small>Website pages · product display · user input</small></div>
+              <div class="arch__flow"><i></i></div>
+              <div class="arch__layer arch__layer--gold"><b>Business Logic</b><small>Orders · payments · cart · inventory</small></div>
+              <div class="arch__flow"><i></i></div>
+              <div class="arch__layer arch__layer--rose"><b>Data</b><small>Users · products · transactions</small></div>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="panel reveal tilt" data-delay="2">
+            <h3><span class="panel__ico">⛁</span>Database design</h3>
+            <svg class="erd" viewBox="0 0 320 210" role="img" aria-label="Database tables: Users, Orders, Order Items, Products and Payments, linked by keys">
+              <g class="erd__links">
+                <path d="M80 50 H130 V105 H150"/>
+                <path d="M210 105 H240 V160"/>
+                <path d="M270 50 V140"/>
+                <path d="M180 125 V165 H120"/>
+              </g>
+              <g class="erd__t"><rect x="10" y="30" width="80" height="40" rx="8"/><text x="50" y="55">Users</text></g>
+              <g class="erd__t erd__t--gold"><rect x="150" y="85" width="80" height="40" rx="8"/><text x="190" y="110">Orders</text></g>
+              <g class="erd__t"><rect x="230" y="30" width="80" height="40" rx="8"/><text x="270" y="55">Products</text></g>
+              <g class="erd__t erd__t--rose"><rect x="200" y="150" width="100" height="40" rx="8"/><text x="250" y="175">Order Items</text></g>
+              <g class="erd__t"><rect x="30" y="150" width="90" height="40" rx="8"/><text x="75" y="175">Payments</text></g>
+            </svg>
+            <p class="panel__note">Keys link each order to its customer, its line items and its payment record.</p>
+          </div>
+
+          <!-- Roles & security -->
+          <div class="panel reveal tilt" data-delay="3">
+            <h3><span class="panel__ico">⚿</span>Roles &amp; security</h3>
+            <ul class="roles">
+              <li><b>Admin</b>Products, users, stock, orders and reports</li>
+              <li><b>Customer</b>Browse, cart, checkout and order history</li>
+              <li><b>Guest</b>Browse products without signing up</li>
+            </ul>
+            <div class="case__chips"><span>Password hashing</span><span>Role-based access</span><span>Input validation</span><span>HTTPS</span></div>
+          </div>
+        </div>
+
+        <div class="case__future reveal">
+          <b>Planned next:</b>
+          <span>Mobile app</span><span>Discount coupons</span><span>Reviews &amp; ratings</span><span>Wishlist</span><span>AI recommendations</span><span>Live chat</span>
+        </div>
+      </div>
+
+      <article class="mini reveal tilt">
+        <div class="mini__art" aria-hidden="true">
+          <div class="dev dev--desk"><i></i><i></i><i></i></div>
+          <div class="dev dev--tab"><i></i><i></i></div>
+          <div class="dev dev--phone"><i></i></div>
+        </div>
+        <div>
+          <span class="eyebrow">Project</span>
+          <h3>Responsive Web Pages</h3>
+          <p>Designed and built responsive web pages with HTML, CSS and JavaScript that adapt smoothly from phones to large desktop screens.</p>
+          <div class="case__chips"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive design</span></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section container" id="journey">
+      <div class="section__head reveal">
+        <span class="eyebrow">My journey</span>
+        <h2 class="section__title">Experience &amp; <em>education</em></h2>
+      </div>
+
+      <div class="journey">
+        <div class="journey__col">
+          <h3 class="journey__title"><span>✦</span>Experience</h3>
+          <div class="timeline" data-timeline>
+            <div class="timeline__line"><i></i></div>
+            <article class="tl reveal">
+              <span class="tl__dot tl__dot--live"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge">Teaching</span><time>2022 – 2024</time></div>
+                <h4>Teaching Assistant / School Teacher</h4>
+                <p class="tl__org">Zahir Pir</p>
+                <ul>
+                  <li>Taught computer, English and general subjects to junior classes.</li>
+                  <li>Guided students in basic computer skills: MS Office, typing and research.</li>
+                  <li>Maintained classroom discipline and supported academic activities.</li>
+                  <li>Evaluated assignments, quizzes and classwork.</li>
+                </ul>
+              </div>
+            </article>
+            <article class="tl reveal">
+              <span class="tl__dot"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge badge--rose">Internship</span><time>Content writing</time></div>
+                <h4>Content Writing Intern</h4>
+                <p class="tl__org">HashStack Technologies</p>
+                <ul>
+                  <li>Wrote web content and articles as part of a professional content writing internship.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="journey__col">
+          <h3 class="journey__title"><span>✦</span>Education</h3>
+          <div class="timeline" data-timeline>
+            <div class="timeline__line"><i></i></div>
+            <article class="tl reveal">
+              <span class="tl__dot tl__dot--live"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge badge--gold">Graduated</span><time>2026</time></div>
+                <h4>BS Computer Science (BSCS)</h4>
+                <p class="tl__org">The Islamia University of Bahawalpur (IUB)</p>
+              </div>
+            </article>
+            <article class="tl reveal">
+              <span class="tl__dot"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge">Associate</span><time>Completed</time></div>
+                <h4>Associate Degree in Computer Science (ADP-CS)</h4>
+                <p class="tl__org">Women College Zahir Pir</p>
+              </div>
+            </article>
+            <article class="tl reveal">
+              <span class="tl__dot"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge">Intermediate</span><time>2019</time></div>
+                <h4>Intermediate in Computer Science (ICS)</h4>
+                <p class="tl__org">BISE Bahawalpur</p>
+              </div>
+            </article>
+            <article class="tl reveal">
+              <span class="tl__dot"></span>
+              <div class="tl__card tilt">
+                <div class="tl__top"><span class="badge">Matric</span><time>2017</time></div>
+                <h4>Matriculation (Science)</h4>
+                <p class="tl__org">BISE Bahawalpur</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS + CERTS ============ -->
+    <section class="section container" id="skills">
+      <div class="section__head reveal">
+        <span class="eyebrow">Skills &amp; certifications</span>
+        <h2 class="section__title">What I <em>bring to the table</em></h2>
+      </div>
+
+      <div class="skills">
+        <div class="skill-group reveal tilt" data-delay="1">
+          <header><span class="sg-ico">&lt;/&gt;</span><h3>Web &amp; Technical</h3></header>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Development</span><span>WordPress</span><span>MS Office</span><span>Internet Research</span></div>
+        </div>
+        <div class="skill-group skill-group--gold reveal tilt" data-delay="2">
+          <header><span class="sg-ico">✎</span><h3>Digital Marketing &amp; Content</h3></header>
+          <div class="tags"><span>SEO</span><span>Content Writing</span><span>Social Media Marketing</span><span>Digital Marketing Basics</span><span>Presentation Skills</span></div>
+        </div>
+        <div class="skill-group skill-group--rose reveal tilt" data-delay="3">
+          <header><span class="sg-ico">✦</span><h3>Teaching &amp; People</h3></header>
+          <div class="tags"><span>Classroom Management</span><span>Lesson Planning &amp; Delivery</span><span>Creative Teaching</span><span>Student Guidance</span><span>Communication</span><span>Teamwork</span><span>Problem Solving</span><span>Time Management</span><span>Adaptability</span><span>Critical Thinking</span></div>
+        </div>
+      </div>
+
+      <h3 class="certs__title reveal">Certifications &amp; training</h3>
+      <div class="certs">
+        <div class="cert reveal tilt" data-delay="1"><span class="cert__seal">✎</span><div><b>Content Writing Internship</b><small>HashStack Technologies</small></div></div>
+        <div class="cert reveal tilt" data-delay="2"><span class="cert__seal cert__seal--gold">AI</span><div><b>Artificial Intelligence Basic Course</b><small>AI Institute</small></div></div>
+        <div class="cert reveal tilt" data-delay="3"><span class="cert__seal cert__seal--rose">&lt;/&gt;</span><div><b>Frontend Development</b><small>Certificate</small></div></div>
+        <div class="cert reveal tilt" data-delay="1"><span class="cert__seal">♥</span><div><b>Social Media Marketing</b><small>Certificate</small></div></div>
+        <div class="cert reveal tilt" data-delay="2"><span class="cert__seal cert__seal--gold">IT</span><div><b>IT Skills</b><small>Certificate</small></div></div>
+        <div class="cert reveal tilt" data-delay="3"><span class="cert__seal cert__seal--rose">$</span><div><b>Freelancing</b><small>Certificate</small></div></div>
+        <div class="cert cert--wide reveal tilt" data-delay="1"><span class="cert__seal">CIT</span><div><b>Certificate in Information Technology (CIT)</b><small>Certificate</small></div></div>
+      </div>
+    </section>
+
+    <!-- ============ CTA ============ -->
+    <section class="container">
+      <div class="cta-banner reveal">
+        <div class="cta-banner__orb"></div>
+        <span class="eyebrow eyebrow--light">Looking for roles in</span>
+        <div class="cta-banner__roles">
+          <span>Junior Web Developer</span><span>WordPress Developer</span><span>SEO &amp; Content Writer</span><span>Social Media Executive</span><span>Computer Teacher</span>
+        </div>
+        <h2>Let's create something <em>meaningful</em> together</h2>
+        <p>Available for full-time, part-time, remote and freelance work.</p>
+        <a href="#contact" class="btn btn--gold btn--lg magnetic"><span>Get In Touch</span>
+          <svg viewBox="0 0 24 24" class="ico-arrow"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section container" id="contact">
+      <div class="section__head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section__title">Let's <em>talk</em></h2>
+      </div>
+      <div class="contact">
+        <div class="contact__cards">
+          <a class="c-card reveal tilt" data-delay="1" href="mailto:eshajaved718@gmail.com">
+            <span class="c-card__ico"><svg viewBox="0 0 24 24" class="swing"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg></span>
+            <div><small>Email me</small><b>eshajaved718@gmail.com</b></div>
+            <svg viewBox="0 0 24 24" class="c-card__go"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="c-card reveal tilt" data-delay="2" href="tel:+923167556718">
+            <span class="c-card__ico c-card__ico--rose"><svg viewBox="0 0 24 24" class="ring"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+            <div><small>Call me</small><b>0316 7556718</b></div>
+            <svg viewBox="0 0 24 24" class="c-card__go"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="c-card reveal tilt" data-delay="3" href="https://wa.me/923167556718" target="_blank" rel="noopener">
+            <span class="c-card__ico c-card__ico--green"><svg viewBox="0 0 24 24" class="bob"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z"/></svg></span>
+            <div><small>WhatsApp</small><b>Chat on WhatsApp</b></div>
+            <svg viewBox="0 0 24 24" class="c-card__go"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <div class="c-card reveal tilt" data-delay="4">
+            <span class="c-card__ico c-card__ico--gold"><svg viewBox="0 0 24 24" class="bob"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div><small>Location</small><b>Zahir Pir, District Rahim Yar Khan</b></div>
+          </div>
+        </div>
+        <form class="form reveal" id="contactForm" data-delay="2">
+          <div class="form__row">
+            <label class="field"><input type="text" name="name" required placeholder=" " /><span>Your name</span></label>
+            <label class="field"><input type="email" name="email" required placeholder=" " /><span>Your email</span></label>
+          </div>
+          <label class="field"><input type="text" name="subject" placeholder=" " /><span>Subject</span></label>
+          <label class="field"><textarea name="message" rows="5" required placeholder=" "></textarea><span>Your message</span></label>
+          <button type="submit" class="btn btn--primary btn--lg btn--block magnetic"><span>Send Message</span>
+            <svg viewBox="0 0 24 24" class="ico-send"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg></button>
+          <p class="form__note">Opens your email app with the message ready to send.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#home" class="logo"><span class="logo__mark">EJ</span><span class="logo__text">Esha <b>Javed</b></span></a>
+        <p>Computer Science graduate building responsive websites, SEO-friendly content and social media growth.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Explore</h4>
+        <a href="#about">About</a><a href="#services">Services</a><a href="#project">Project</a><a href="#journey">Journey</a>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="mailto:eshajaved718@gmail.com">eshajaved718@gmail.com</a>
+        <a href="tel:+923167556718">0316 7556718</a>
+        <span>Zahir Pir, Rahim Yar Khan</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© <span id="year">2026</span> Esha Javed. All rights reserved.</span>
+      <a href="#home" class="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    </div>
+  </footer>
+
+  <script src="script.js?v=1"></script>
+</body>
+</html>
